@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <title>Teste TIC - 5.º Ano</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 700px; margin: 20px auto; }
+    .pergunta { margin-bottom: 20px; padding: 10px; border: 1px solid #ddd; border-radius: 6px; }
+    .resultado { margin-top: 20px; font-weight: bold; font-size: 18px; }
+    button { padding: 10px 20px; font-size: 16px; cursor: pointer; }
+  </style>
+</head>
+<body>
+
+  <h1>Teste de TIC – 5.º Ano</h1>
+  <p>Responde às perguntas e clica em Enviar.</p>
+
+  <form id="quiz-form">
+
+    <!-- PERGUNTAS GERADAS -->
+    <div class="pergunta">
+      <p><b>1) O que é hardware?</b></p>
+      <label><input type="radio" name="q1" value="A"> Programas que usamos no computador</label><br>
+      <label><input type="radio" name="q1" value="B"> As partes físicas do computador</label><br>
+      <label><input type="radio" name="q1" value="C"> A internet</label><br>
+      <label><input type="radio" name="q1" value="D"> Um tipo de ficheiro</label>
+    </div>
+
+    <div class="pergunta">
+      <p><b>2) Qual destes é um dispositivo de entrada?</b></p>
+      <label><input type="radio" name="q2" value="A"> Monitor</label><br>
+      <label><input type="radio" name="q2" value="B"> Impressora</label><br>
+      <label><input type="radio" name="q2" value="C"> Rato</label><br>
+      <label><input type="radio" name="q2" value="D"> Colunas</label>
+    </div>
+
+    <div class="pergunta">
+      <p><b>3) Qual destes é um dispositivo de saída?</b></p>
+      <label><input type="radio" name="q3" value="A"> Teclado</label><br>
+      <label><input type="radio" name="q3" value="B"> Monitor</label><br>
+      <label><input type="radio" name="q3" value="C"> Rato</label><br>
+      <label><input type="radio" name="q3" value="D"> Webcam</label>
+    </div>
+
+    <div class="pergunta">
+      <p><b>4) O que é um ficheiro com extensão .jpg?</b></p>
+      <label><input type="radio" name="q4" value="A"> Um ficheiro de texto</label><br>
+      <label><input type="radio" name="q4" value="B"> Um ficheiro de imagem</label><br>
+      <label><input type="radio" name="q4" value="C"> Um ficheiro de áudio</label><br>
+      <label><input type="radio" name="q4" value="D"> Um ficheiro comprimido</label>
+    </div>
+
+    <div class="pergunta">
+      <p><b>5) O que significa “senha segura”?</b></p>
+      <label><input type="radio" name="q5" value="A"> Uma palavra simples e fácil de decorar</label><br>
+      <label><input type="radio" name="q5" value="B"> O nome do utilizador</label><br>
+      <label><input type="radio" name="q5" value="C"> Uma combinação difícil de adivinhar</label><br>
+      <label><input type="radio" name="q5" value="D"> A mesma senha para todos os sites</label>
+    </div>
+
+    <div class="pergunta">
+      <p><b>6) Qual é a função de um navegador (browser)?</b></p>
+      <label><input type="radio" name="q6" value="A"> Criar documentos</label><br>
+      <label><input type="radio" name="q6" value="B"> Aceder a páginas da internet</label><br>
+      <label><input type="radio" name="q6" value="C"> Guardar ficheiros</label><br>
+      <label><input type="radio" name="q6" value="D"> Desenhar imagens</label>
+    </div>
+
+    <div class="pergunta">
+      <p><b>7) Qual destes é um exemplo de software?</b></p>
+      <label><input type="radio" name="q7" value="A"> Disco rígido</label><br>
+      <label><input type="radio" name="q7" value="B"> Teclado</label><br>
+      <label><input type="radio" name="q7" value="C"> Microsoft Word</label><br>
+      <label><input type="radio" name="q7" value="D"> Pen USB</label>
+    </div>
+
+    <div class="pergunta">
+      <p><b>8) O que é a “nuvem” (cloud)?</b></p>
+      <label><input type="radio" name="q8" value="A"> Um vírus informático</label><br>
+      <label><input type="radio" name="q8" value="B"> Um local para guardar ficheiros online</label><br>
+      <label><input type="radio" name="q8" value="C"> Um tipo de computador</label><br>
+      <label><input type="radio" name="q8" value="D"> Um cabo de rede</label>
+    </div>
+
+    <div class="pergunta">
+      <p><b>9) Para que serve o atalho CTRL + C?</b></p>
+      <label><input type="radio" name="q9" value="A"> Colar</label><br>
+      <label><input type="radio" name="q9" value="B"> Copiar</label><br>
+      <label><input type="radio" name="q9" value="C"> Cortar</label><br>
+      <label><input type="radio" name="q9" value="D"> Fechar</label>
+    </div>
+
+    <div class="pergunta">
+      <p><b>10) Qual destas práticas é segura na internet?</b></p>
+      <label><input type="radio" name="q10" value="A"> Partilhar a palavra‑passe com amigos</label><br>
+      <label><input type="radio" name="q10" value="B"> Aceitar pedidos de estranhos</label><br>
+      <label><input type="radio" name="q10" value="C"> Usar sites desconhecidos</label><br>
+      <label><input type="radio" name="q10" value="D"> Falar com um adulto quando algo parece estranho</label>
+    </div>
+
+    <button type="submit">Enviar</button>
+  </form>
+
+  <div class="resultado" id="resultado"></div>
+
+  <script>
+    const CORRETAS = {
+      q1: "B",
+      q2: "C",
+      q3: "B",
+      q4: "B",
+      q5: "C",
+      q6: "B",
+      q7: "C",
+      q8: "B",
+      q9: "B",
+      q10: "D"
+    };
+
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwnOTBc7VFTx9lfxqf-e-gx0JJhkt39AIo3E8_RVn5lALAme1xmDo1xSIaSf2H0YAZa/exec";
+
+    document.getElementById("quiz-form").addEventListener("submit", async function(e) {
+      e.preventDefault();
+
+      const formData = new FormData(e.target);
+      let score = 0;
+      let respostas = {};
+
+      for (let q in CORRETAS) {
+        const r = formData.get(q);
+        respostas[q] = r || "";
+        if (r === CORRETAS[q]) score++;
+      }
+
+      document.getElementById("resultado").textContent =
+        `Acertaste ${score} de 10 perguntas.`;
+
+      const payload = {
+        ...respostas,
+        score: score,
+        total: 10,
+        timestamp: new Date().toISOString()
+      };
+
+      fetch(SCRIPT_URL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload)
+      });
+    });
+  </script>
+
+</body>
+</html>
